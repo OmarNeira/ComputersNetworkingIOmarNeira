@@ -1,0 +1,55 @@
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: 
+
+Press RETURN to get started!
+
+
+
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#enable secret class
+Router(config)#line con 0
+Router(config-line)#password cisco
+Router(config-line)#login
+Router(config-line)#exit
+Router(config)#service password-encryption
+Router(config)#banner motd $Authorized Access Only!$
+Router(config)#
+Router#
+
+/////////////////////////////////////// SWITCH
+
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#hostname SwitchUD
+SwitchUD(config)#enable secret class
+SwitchUD(config)#line console 0
+SwitchUD(config-line)#password cisco
+SwitchUD(config-line)#login
+SwitchUD(config-line)#exit
+SwitchUD(config)#service password-encryption
+SwitchUD(config)#banner motd $Authorized Access only!!!$
+SwitchUD(config)#interface vlan 1
+SwitchUD(config-if)#ip address 193.168.1.2 255.255.255.0
+SwitchUD(config-if)#no shutdown
+
+SwitchUD(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+SwitchUD(config-if)#exit
+SwitchUD(config)#ip default-gateway 193.168.1.1
+SwitchUD(config)#exit
+SwitchUD#
+%SYS-5-CONFIG_I: Configured from console by console
+
+SwitchUD#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+SwitchUD#
