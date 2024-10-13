@@ -1,0 +1,15 @@
+El entorno virtual lo cree desde cmd con "python -m venv .venv", primero hice cd apuntando a la carpeta de este ejercicio
+
+Se installo poetry con "pip install poetry" para manejar paquetes
+
+Con "poetry init" se comienza a crear el proyecto
+
+Usando poetry se instalaron tres paquetes asi: "poetry add fastapi uvicorn numpy"
+
+Se instalaron paquetes y utilidades para el programador usando: "poetry add -G dev pytest black pylint pre-commit"
+
+Instalamos "poetry add fastapi[standard]"
+
+Ejecutamos con el comando "fastapi dev main.py"
+
+Me toco correrlo con "uvicorn main:api", el de antes no me funciono

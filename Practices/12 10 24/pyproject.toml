@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "services-example"
+version = "0.1.1"
+description = "Este es un ejemplo de servicios web usando fastAPI para se desplegado usando docker."
+authors = ["Omar Neira"]
+license = "GNU/GPL 3"
+readme = "README.md"
+packages = [{include = "0"}]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.115.2"
+uvicorn = "^0.31.1"
+numpy = "^2.1.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.10.0"
+pylint = "^3.3.1"
+pre-commit = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
